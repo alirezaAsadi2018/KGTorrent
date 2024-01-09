@@ -29,7 +29,7 @@ class DataLoader:
         # Array of table file names
         table = self._constraints_df['Table']
         referenced_table = self._constraints_df['Referenced Table']
-        union = table.append(referenced_table, ignore_index=True)
+        union = table._append(referenced_table, ignore_index=True)
         table_file_names = union.unique()
 
         # Dictionary of tables
