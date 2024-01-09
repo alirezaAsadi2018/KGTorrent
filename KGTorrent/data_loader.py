@@ -3,6 +3,7 @@ This module defines the class that handles the data loading.
 """
 
 import pandas as pd
+import os
 
 # Imports for testing
 from KGTorrent import config
@@ -38,7 +39,7 @@ class DataLoader:
         # Reading tables
         print('## Loading MeataKaggle csv tables from provided path...')
         for file_name in table_file_names:
-            self._tables_dict[file_name] = pd.read_csv(meta_kaggle_path + '\\' + file_name)
+            self._tables_dict[file_name] = pd.read_csv(os.path.join(meta_kaggle_path, file_name))
             print(f'- {file_name} loaded.')
 
     def get_constraints_df(self):
