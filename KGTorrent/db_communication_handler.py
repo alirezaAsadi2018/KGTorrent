@@ -17,7 +17,7 @@ from sqlalchemy_utils import database_exists, \
 
 # Imports to create table schemas
 from sqlalchemy import (MetaData, Table, Column, Integer, String, Float,
-                        DateTime, Boolean, Text, BigInteger)
+                        DateTime, Boolean, Text, BigInteger, text)
 from sqlalchemy.dialects.mysql import (MEDIUMTEXT, LONGTEXT)
 
 # Imports for testing
