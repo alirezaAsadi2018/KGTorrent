@@ -99,7 +99,7 @@ class MkPreprocessor:
                 'Final#rows': None,
                 'Ratio': None
             }
-            self._stats = self._stats.append(new_stats_row, ignore_index=True)
+            self._stats = self._stats._append(new_stats_row, ignore_index=True)
 
         print()
 
