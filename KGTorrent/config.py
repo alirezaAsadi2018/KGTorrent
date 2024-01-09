@@ -19,7 +19,7 @@ db_password = os.environ['MYSQL_PWD']
 
 # Data paths
 meta_kaggle_path = os.environ['METAKAGGLE_PATH']
-constraints_file_path = '../data/fk_constraints_data.csv'
+constraints_file_path = os.environ.get('CONSTRAINTS_FILE_PATH', '../data/fk_constraints_data.csv')
 
 # Notebook dataset configuration
 nb_archive_path = os.environ['NB_DEST_PATH']
