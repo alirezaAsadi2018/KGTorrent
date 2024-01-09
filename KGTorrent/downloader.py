@@ -180,11 +180,11 @@ class Downloader:
         time.sleep(1)
 
         # HTTP STRATEGY
-        if strategy is 'HTTP':
+        if strategy == 'HTTP':
             self._http_download()
 
         # API STRATEGY
-        if strategy is 'API':
+        if strategy == 'API':
             self._api_download()
 
         # Print download session summary
