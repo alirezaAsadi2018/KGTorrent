@@ -523,7 +523,7 @@ class DbCommunicationHandler:
 
         # Execute the query
         with self._engine.connect() as conn:
-            nb_identifiers = pd.read_sql(sql=query, con=conn)
+            nb_identifiers = pd.read_sql(sql=text(query), con=conn)
 
         return nb_identifiers
 
