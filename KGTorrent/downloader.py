@@ -99,7 +99,7 @@ class Downloader:
         for row in tqdm(self._nb_identifiers.itertuples(), total=self._nb_identifiers.shape[0]):
 
             # Generate URL
-            url = 'https://www.kaggle.com/kernels/scriptcontent/{}/download'.format(row[3])
+            url = 'https://www.kaggle.com/kernels/scriptcontent/{}/download'.format(int(row[3]))
 
             # Download notebook content to memory
             # noinspection PyBroadException
