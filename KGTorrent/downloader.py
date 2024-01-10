@@ -125,7 +125,7 @@ class Downloader:
             logging.info(f'Downloaded {row[1]}/{row[2]} (ID: {row[3]})')
 
             # Wait a bit to avoid a potential IP banning
-            time.sleep(1)
+            time.sleep(2)
 
     def _api_download(self):
         """
