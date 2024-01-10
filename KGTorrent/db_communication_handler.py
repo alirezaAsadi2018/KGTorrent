@@ -456,10 +456,23 @@ class DbCommunicationHandler:
             constraints_df: The ``pandas.DataFrame`` which contains the foreign key constraints information
         """
 
+        case_sensitive = False
+        Default_Value_Unix = 0
+
+        query = 'SELECT @@GLOBAL.lower_case_table_names;'
+        with self._engine.connect() as conn:
+          result = conn.execute(text(query))
+        if result.first()[0] == Default_Value_Unix:
+            case_sensitive = True
+
         for _, fk in constraints_df.iterrows():
-            table_name = fk['Table'][:-4].lower()
+            if not case_sensitive:
+                table_name = fk['Table'][:-4].lower()
+                referenced_table = fk['Referenced Table'][:-4].lower()
+            else:
+                table_name = fk['Table'][:-4]
+                referenced_table = fk['Referenced Table'][:-4]
             foreign_key = fk['Foreign Key']
-            referenced_table = fk['Referenced Table'][:-4].lower()
             referenced_col = fk['Referenced Column']
 
             query = f'ALTER TABLE {table_name} ' \
