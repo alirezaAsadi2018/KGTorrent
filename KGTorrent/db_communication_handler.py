@@ -468,7 +468,8 @@ class DbCommunicationHandler:
             print('Executing "{}"'.format(query))
             try:
                 with self._engine.connect() as conn:
-                    result = conn.execute(text(query))
+                    conn.execute(text(query))
+                    conn.commit()
             except IntegrityError as e:
                 print("\t - INTEGRITY ERROR. Can't update table ", table_name, file=sys.stderr)
 
