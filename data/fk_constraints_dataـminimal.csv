@@ -1,0 +1,27 @@
+Table,Foreign Key,Referenced Table,Referenced Column
+KernelVersions.csv,AuthorUserId,Users.csv,Id
+KernelVersions.csv,ScriptId,Kernels.csv,Id
+KernelVersions.csv,ScriptLanguageId,KernelLanguages.csv,Id
+Kernels.csv,AuthorUserId,Users.csv,Id
+Kernels.csv,CurrentKernelVersionId,KernelVersions.csv,Id
+KernelVotes.csv,UserId,Users.csv,Id
+KernelVotes.csv,KernelVersionId,KernelVersions.csv,Id
+UserFollowers.csv,UserId,Users.csv,Id
+UserFollowers.csv,FollowingUserId,Users.csv,Id
+ForumMessageVotes.csv,ForumMessageId,ForumMessages.csv,Id
+ForumMessageVotes.csv,FromUserId,Users.csv,Id
+ForumMessageVotes.csv,ToUserId,Users.csv,Id
+ForumMessages.csv,ForumTopicId,ForumTopics.csv,Id
+ForumMessages.csv,PostUserId,Users.csv,Id
+ForumMessages.csv,ReplyToForumMessageId,ForumMessages.csv,Id
+ForumTopics.csv,ForumId,Forums.csv,Id
+ForumTopics.csv,KernelId,Kernels.csv,Id
+ForumTopics.csv,LastForumMessageId,ForumMessages.csv,Id
+ForumTopics.csv,FirstForumMessageId,ForumMessages.csv,Id
+Forums.csv,ParentForumId,Forums.csv,Id
+KernelVersionKernelSources.csv,KernelVersionId,KernelVersions.csv,Id
+KernelVersionKernelSources.csv,SourceKernelVersionId,KernelVersions.csv,Id
+KernelVersions.csv,ParentScriptVersionId,KernelVersions.csv,Id
+Kernels.csv,ForkParentKernelVersionId,KernelVersions.csv,Id
+Kernels.csv,ForumTopicId,ForumTopics.csv,Id
+Kernels.csv,FirstKernelVersionId,KernelVersions.csv,Id
